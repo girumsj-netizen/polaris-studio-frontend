@@ -1,0 +1,1259 @@
+---
+import Layout from '../layouts/Layout.astro';
+const canonical = 'https://yourdomain.com';
+---
+
+<Layout title="Polaris Digital — Full-Service Creative Agency & Web Development" description="From premium logos and visual branding to high-performance front-ends and scalable back-end architecture, we build endless software solutions tailored to elevate your digital presence." canonical={canonical}>
+
+  <!-- ===== TABBED INTERFACE ===== -->
+  <div id="app-root" class="relative min-h-screen">
+
+    <!-- Tab bar removed — tabs now live inside the navbar -->
+
+    <!-- ===== TAB PANELS ===== -->
+
+    <!-- TAB: STUDIO (Hero + Process) -->
+    <div id="panel-studio" class="tab-panel active is-active space-y-12 pb-12">
+      <section class="showcase-hero">
+        <div class="grid gap-6 sm:gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div class="hero-copy">
+            <p class="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-accent">[ / CREATIVE AGENCY]</p>
+            <h1 class="mt-5 sm:mt-8 max-w-3xl text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.08] text-white">
+              We build stunning websites, design professional logos, and develop custom software apps for your business.
+            </h1>
+            <p class="mt-5 sm:mt-8 max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed text-zinc-300">
+              From premium logos and visual branding to high-performance front-ends and scalable back-end architecture, we build endless software solutions tailored to elevate your digital presence.
+            </p>
+            <div class="mt-6 sm:mt-10 flex flex-col gap-3 sm:gap-4 sm:flex-row">
+              <button data-tab-target="work" class="inline-flex items-center justify-center rounded-full bg-accent px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-black shadow-[0_0_0_rgba(0,179,126,0.35)] transition-all duration-300 ease-out hover:shadow-[0_0_40px_rgba(0,179,126,0.28)]">View Our Work</button>
+              <button data-tab-target="contact" class="inline-flex items-center justify-center rounded-full border border-zinc-700 bg-[#111113] px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-zinc-200 transition-all duration-300 ease-out hover:border-zinc-600 hover:text-white">Start a Project</button>
+            </div>
+
+            <div class="mt-6 sm:mt-10 max-w-xl rounded-[2rem] border border-zinc-800/60 bg-[#141417] p-5 sm:p-7 shadow-soft">
+              <article class="grid gap-5">
+                <div class="flex items-center gap-4">
+                  <span class="shrink-0 rounded-full bg-accent/10 px-4 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent">What we deliver</span>
+                  <p class="text-xs sm:text-sm leading-relaxed text-zinc-400">Branding, UI design, development, and launch — crafted as one seamless experience.</p>
+                </div>
+                <div class="grid grid-cols-3 gap-2.5 sm:gap-3">
+                  <div class="group rounded-2xl bg-[#0f0f12] border border-zinc-800/40 p-4 sm:p-5 text-center transition-all duration-300 hover:border-zinc-700/60">
+                    <span class="block text-[10px] sm:text-xs font-medium uppercase tracking-[0.22em] text-accent">Identity</span>
+                    <strong class="mt-2.5 block text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white">Branding</strong>
+                  </div>
+                  <div class="group rounded-2xl bg-[#0f0f12] border border-zinc-800/40 p-4 sm:p-5 text-center transition-all duration-300 hover:border-zinc-700/60">
+                    <span class="block text-[10px] sm:text-xs font-medium uppercase tracking-[0.22em] text-accent">Interface</span>
+                    <strong class="mt-2.5 block text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white">Websites</strong>
+                  </div>
+                  <div class="group rounded-2xl bg-[#0f0f12] border border-zinc-800/40 p-4 sm:p-5 text-center transition-all duration-300 hover:border-zinc-700/60">
+                    <span class="block text-[10px] sm:text-xs font-medium uppercase tracking-[0.22em] text-accent">Systems</span>
+                    <strong class="mt-2.5 block text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white">Apps</strong>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Interactive 3D device preview">
+            <!-- Device toggle -->
+            <div class="device-toggle" id="hero-device-toggle">
+              <button data-device="iphone" class="active" aria-label="Show phone model">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                <span>Phone</span>
+              </button>
+              <button data-device="laptop" aria-label="Show laptop model">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                <span>Laptop</span>
+              </button>
+            </div>
+
+            <!-- iPhone scene (default) -->
+            <div class="iphone-scene hero-device-scene active" data-device-scene="iphone" data-iphone-scene data-model-src="/assets/models/iphone.gltf">
+              <canvas aria-hidden="true"></canvas>
+              <div class="iphone-fallback">
+                <div class="fallback-phone">
+                  <span></span>
+                  <strong>1.8s</strong>
+                  <p>Fast, clear, and ready.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Laptop scene (hidden) -->
+            <div class="hero-device-scene" data-device-scene="laptop" style="display:none; position:absolute; inset:0; min-height:100%;">
+              <div class="laptop-scene h-full w-full" data-laptop-scene data-model-src="/assets/models/macbook.glb">
+                <canvas aria-hidden="true"></canvas>
+              </div>
+            </div>
+
+            <div class="hero-visual-caption">
+              <span>Interactive preview</span>
+              <strong>The interfaces we build are compatible with multiple devices</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="space-y-8">
+        <div class="space-y-4">
+          <p class="text-xs font-mono uppercase tracking-widest text-zinc-500">[ / OUR PROCESS]</p>
+          <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">A straightforward process with no surprises.</h2>
+        </div>
+        <div class="grid gap-4 sm:gap-6 md:grid-cols-4 reveal-stagger">
+          <article class="process-card rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-6">
+            <p class="text-xs font-mono uppercase tracking-widest text-accent">01</p>
+            <h3 class="mt-4 text-lg font-semibold text-white">Discover</h3>
+            <p class="mt-3 text-sm text-zinc-400">We learn about your brand, audience, goals, and competitive landscape to define the strategic direction.</p>
+          </article>
+          <article class="process-card rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-6">
+            <p class="text-xs font-mono uppercase tracking-widest text-accent">02</p>
+            <h3 class="mt-4 text-lg font-semibold text-white">Define</h3>
+            <p class="mt-3 text-sm text-zinc-400">We architect the page structure, user flows, messaging hierarchy, and conversion strategy.</p>
+          </article>
+          <article class="process-card rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-6">
+            <p class="text-xs font-mono uppercase tracking-widest text-accent">03</p>
+            <h3 class="mt-4 text-lg font-semibold text-white">Create</h3>
+            <p class="mt-3 text-sm text-zinc-400">We design and develop the full experience — from UI concepts to responsive, performance-optimized code.</p>
+          </article>
+          <article class="process-card rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-6">
+            <p class="text-xs font-mono uppercase tracking-widest text-accent">04</p>
+            <h3 class="mt-4 text-lg font-semibold text-white">Launch</h3>
+            <p class="mt-3 text-sm text-zinc-400">We deploy, monitor, and hand over a polished product with everything your team needs to maintain and grow.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- TAB: WORK -->
+    <div id="panel-work" class="tab-panel space-y-8 pb-12 hidden is-active">
+      <!-- Work sub-tabs -->
+      <div class="flex flex-wrap gap-2">
+        <button data-subtab="websites" class="work-subtab-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 bg-zinc-800/30 text-zinc-400 hover:text-white border border-zinc-800/40 data-[active=true]:bg-accent/10 data-[active=true]:text-accent data-[active=true]:border-accent/30">
+          Websites
+        </button>
+        <button data-subtab="branding" class="work-subtab-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 bg-zinc-800/30 text-zinc-400 hover:text-white border border-zinc-800/40 data-[active=true]:bg-accent/10 data-[active=true]:text-accent data-[active=true]:border-accent/30">
+          Branding
+        </button>
+        <button data-subtab="apps" class="work-subtab-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 bg-zinc-800/30 text-zinc-400 hover:text-white border border-zinc-800/40 data-[active=true]:bg-accent/10 data-[active=true]:text-accent data-[active=true]:border-accent/30">
+          Apps
+        </button>
+      </div>
+
+      <!-- Websites sub-panel -->
+      <div id="work-websites" class="work-subpanel active space-y-8">
+        <!-- Nova Flow project -->
+        <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-8 transition-all duration-300 hover:border-zinc-700/80">
+          <p class="text-xs font-mono uppercase tracking-widest text-accent">SaaS Dashboard</p>
+          <h3 class="mt-3 sm:mt-4 text-xl sm:text-2xl font-semibold tracking-tight text-white">Nova Flow — enterprise analytics interface.</h3>
+          <div class="mt-4 sm:mt-6 grid gap-4 text-zinc-400 sm:grid-cols-3">
+            <div>
+              <p class="font-semibold text-white">Our goal</p>
+              <p class="mt-2 text-sm sm:text-base">Transform a complex data platform into an intuitive, visually compelling dashboard that users trust at first glance.</p>
+            </div>
+            <div>
+              <p class="font-semibold text-white">Our solution</p>
+              <p class="mt-2 text-sm sm:text-base">We designed a clean desktop and mobile experience with strong contrast, clear data hierarchy, and seamless navigation.</p>
+            </div>
+            <div>
+              <p class="font-semibold text-white">Result</p>
+              <p class="mt-2 text-sm sm:text-base">A sharper product presence that helps buyers evaluate with confidence — even under time pressure.</p>
+            </div>
+          </div>
+          <figure class="mt-6 sm:mt-8">
+            <div class="relative aspect-[16/9] overflow-hidden rounded-3xl border border-zinc-800/60 bg-[radial-gradient(circle_at_30%_40%,rgba(0,179,126,0.18),transparent_52%),radial-gradient(circle_at_70%_20%,rgba(96,165,250,0.15),transparent_38%),#09131c] shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
+              <div class="iphone-scene" data-iphone-scene data-model-src="/assets/models/iphone.gltf" style="position:absolute;inset:0;min-height:100%;">
+                <canvas aria-hidden="true"></canvas>
+              </div>
+            </div>
+          </figure>
+        </article>
+
+        <!-- AETHER project -->
+        <article class="rounded-2xl bg-gradient-to-br from-[#141417] to-[#111115] border border-zinc-800/60 p-5 sm:p-8 transition-all duration-300 hover:border-zinc-700/80">
+          <div class="grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-accent">Premium Commerce</p>
+              <h3 class="mt-3 sm:mt-4 text-xl sm:text-2xl font-semibold tracking-tight text-white">AETHER — luxury audio experience.</h3>
+              <div class="mt-4 sm:mt-6 space-y-4 text-zinc-400">
+                <div>
+                  <p class="font-semibold text-white">Our vision</p>
+                  <p class="mt-2 text-sm sm:text-base">We built a refined interface for high-end audio equipment that communicates craft, restraint, and uncompromising quality through every pixel.</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-white">What we delivered</p>
+                  <p class="mt-2 text-sm sm:text-base">Immersive product presentation with clear visual hierarchy, premium motion design, and an interactive 3D product viewer that lets buyers explore from every angle.</p>
+                </div>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-zinc-700/60 bg-zinc-800/20 px-3 py-1 text-xs text-zinc-400">3D Integration</span>
+                <span class="rounded-full border border-zinc-700/60 bg-zinc-800/20 px-3 py-1 text-xs text-zinc-400">Animation</span>
+                <span class="rounded-full border border-zinc-700/60 bg-zinc-800/20 px-3 py-1 text-xs text-zinc-400">Luxury UI</span>
+              </div>
+            </div>
+            <div class="relative min-h-56 overflow-hidden rounded-3xl border border-zinc-800/60 bg-[#0b0b0e] sm:h-80 md:h-96">
+              <div class="laptop-scene h-full w-full" data-laptop-scene data-model-src="/assets/models/macbook.glb">
+                <canvas aria-hidden="true"></canvas>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Branding sub-panel -->
+      <div id="work-branding" class="work-subpanel space-y-6 hidden">
+        <p class="text-xs font-mono uppercase tracking-widest text-accent">Brand Identity Showcase</p>
+        <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-white">Visual brand systems we design.</h3>
+        <div class="grid gap-4 sm:gap-6 md:grid-cols-3">
+          <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-6 transition-all duration-300 hover:border-zinc-700/80">
+            <div class="aspect-square rounded-xl bg-[#0b0b0e] flex items-center justify-center mb-4">
+              <span class="text-4xl font-bold text-accent/40">L</span>
+            </div>
+            <h4 class="text-sm font-semibold text-white">Logo Concepts</h4>
+            <p class="mt-2 text-xs text-zinc-400">Custom wordmarks, symbols, and combination marks tailored to your brand identity.</p>
+          </article>
+          <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-6 transition-all duration-300 hover:border-zinc-700/80">
+            <div class="aspect-square rounded-xl bg-[#0b0b0e] flex items-center justify-center mb-4">
+              <div class="flex gap-2">
+                <span class="w-6 h-6 rounded-full bg-accent"></span>
+                <span class="w-6 h-6 rounded-full bg-blue-500"></span>
+                <span class="w-6 h-6 rounded-full bg-amber-400"></span>
+              </div>
+            </div>
+            <h4 class="text-sm font-semibold text-white">Color & Typography</h4>
+            <p class="mt-2 text-xs text-zinc-400">Comprehensive palettes, font pairings, and design tokens that define your brand voice.</p>
+          </article>
+          <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-6 transition-all duration-300 hover:border-zinc-700/80">
+            <div class="aspect-square rounded-xl bg-[#0b0b0e] flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 200 40" fill="none" class="h-11 w-auto">
+                <rect width="40" height="40" rx="8" fill="#2563EB"/>
+                <g transform="translate(8, 4) scale(1.333)">
+                  <g transform="translate(-2.8, 0)">
+                    <circle cx="12" cy="8" r="6" fill="none" stroke="white" stroke-width="1.5"/>
+                    <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                </g>
+                <text x="52" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold" fill="#111827">CertPlatform</text>
+              </svg>
+            </div>
+            <h4 class="text-sm font-semibold text-white">CertPlatform Logo</h4>
+            <p class="mt-2 text-xs text-zinc-400">A clean, simple shield mark with a minimal figure — designed for instant recognition across digital and print.</p>
+          </article>
+          <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-6 transition-all duration-300 hover:border-zinc-700/80">
+            <div class="aspect-square rounded-xl bg-[#0b0b0e] flex items-center justify-center mb-4">
+              <div class="grid grid-cols-2 gap-1">
+                <span class="w-5 h-5 rounded bg-zinc-700"></span>
+                <span class="w-5 h-5 rounded bg-zinc-700"></span>
+                <span class="w-5 h-5 rounded bg-zinc-700"></span>
+                <span class="w-5 h-5 rounded bg-zinc-700"></span>
+              </div>
+            </div>
+            <h4 class="text-sm font-semibold text-white">Brand Applications</h4>
+            <p class="mt-2 text-xs text-zinc-400">Stationery, packaging, brochures, and full corporate identity layouts.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Apps sub-panel -->
+      <div id="work-apps" class="work-subpanel space-y-8 hidden">
+        <!-- CertPlatform project -->
+        <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-5 sm:p-8 transition-all duration-300 hover:border-zinc-700/80">
+          <p class="text-xs font-mono uppercase tracking-widest text-accent">Certificate Management Platform</p>
+          <h3 class="mt-3 sm:mt-4 text-xl sm:text-2xl font-semibold tracking-tight text-white">CertPlatform — web app for generating professional certificates.</h3>
+          <div class="mt-4 sm:mt-6 grid gap-4 text-zinc-400 sm:grid-cols-3">
+            <div>
+              <p class="font-semibold text-white">Our goal</p>
+              <p class="mt-2 text-sm sm:text-base">Build a streamlined platform that enables organizations to design, manage, and distribute certificates for trainees and clients with minimal effort.</p>
+            </div>
+            <div>
+              <p class="font-semibold text-white">Our solution</p>
+              <p class="mt-2 text-sm sm:text-base">We developed a full-featured web application with custom template creation, bulk certificate generation, and an analytics dashboard to track issuance data at a glance.</p>
+            </div>
+            <div>
+              <p class="font-semibold text-white">Result</p>
+              <p class="mt-2 text-sm sm:text-base">A fast, intuitive tool that eliminates manual certificate workflows — letting teams produce branded certificates in bulk with just a few clicks.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full border border-zinc-700/60 bg-zinc-800/20 px-3 py-1 text-xs text-zinc-400">Web Application</span>
+            <span class="rounded-full border border-zinc-700/60 bg-zinc-800/20 px-3 py-1 text-xs text-zinc-400">Template Engine</span>
+            <span class="rounded-full border border-zinc-700/60 bg-zinc-800/20 px-3 py-1 text-xs text-zinc-400">Analytics</span>
+            <span class="rounded-full border border-zinc-700/60 bg-zinc-800/20 px-3 py-1 text-xs text-zinc-400">Bulk Generation</span>
+          </div>
+          <figure class="mt-6 sm:mt-8">
+            <div class="relative mx-auto max-w-3xl overflow-hidden rounded-xl border border-zinc-800/60 bg-[#0b0b0e] shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
+              <div class="flex items-center gap-2 border-b border-zinc-800/60 bg-[#141417] px-4 py-2.5">
+                <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+                <span class="ml-3 text-[10px] text-zinc-500">CertPlatform</span>
+              </div>
+              <img src="/assets/App%20pictures/Screenshot%202026-05-30%20224212.png" alt="CertPlatform dashboard" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+            </div>
+          </figure>
+        </article>
+      </div>
+    </div>
+
+    <!-- TAB: SERVICES -->
+    <div id="panel-services" class="tab-panel space-y-12 pb-12 hidden is-active">
+
+      <!-- Website Development Packages -->
+      <section class="space-y-8">
+        <div class="space-y-4">
+          <p class="text-xs font-mono uppercase tracking-widest text-zinc-500">[ / WEB DEVELOPMENT]</p>
+          <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Website development packages built for every stage of your business.</h2>
+          <p class="max-w-3xl text-base leading-8 text-zinc-400">From a clean, high-converting brochure site to a fully dynamic platform with admin control — choose the tier that matches your ambition.</p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-3">
+          <!-- TIER 1 -->
+          <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-6 sm:p-8 transition-all duration-300 hover:border-zinc-700/80 group flex flex-col">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-xs font-mono uppercase tracking-widest text-zinc-500">Tier 1</p>
+              <span class="rounded-full bg-zinc-800/40 px-3 py-1 text-[10px] uppercase tracking-widest text-zinc-500">Essential</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-white">Simple Website</h3>
+            <p class="mt-2 text-sm text-zinc-400">Establish a premium, high-converting digital presence.</p>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-3xl font-semibold text-white">20,000 ETB</span>
+            </div>
+            <p class="text-xs text-zinc-500 mt-1">Timeline: 7 to 10 Days</p>
+            <ul class="mt-6 space-y-2.5 flex-1">
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Custom website designs</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Fully responsive UI for desktop, tablet, and mobile</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Basic SEO configuration</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Basic back-end setup and contact handling</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Includes 3 to 6 months of free maintenance</li>
+            </ul>
+            <button data-tab-target="contact" class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-zinc-700 bg-[#111113] px-6 py-3 text-sm font-semibold text-zinc-200 transition-all duration-300 ease-out hover:border-zinc-600 hover:text-white">Get Started</button>
+          </article>
+
+          <!-- TIER 2 -->
+          <article class="rounded-2xl bg-[#141417] border border-accent/40 p-6 sm:p-8 shadow-[0_0_60px_rgba(0,179,126,0.08)] transition-all duration-300 hover:border-accent/60 group relative overflow-hidden flex flex-col">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full"></div>
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-xs font-mono uppercase tracking-widest text-accent">Tier 2</p>
+              <span class="rounded-full bg-accent/10 px-3 py-1 text-[10px] uppercase tracking-widest text-accent">Most requested</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-white">Business Website</h3>
+            <p class="mt-2 text-sm text-zinc-400">Scale your operations with dynamic data and powerful administrative control.</p>
+            <div class="mt-4 flex items-baseline gap-2"><span class="text-3xl font-semibold text-white">30,000 ETB</span></div>
+            <p class="text-xs text-zinc-500 mt-1">Timeline: 10 to 15 Days</p>
+            <ul class="mt-6 space-y-2.5 flex-1">
+              <li class="flex items-start gap-3 text-sm text-zinc-400"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500"></span>Everything included in the Simple Website package, plus:</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Robust, advanced SEO strategy</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Deep Google Analytics integration</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Custom Admin Panel</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Dedicated product management or inventory systems</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Fully dynamic content delivery (CMS)</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Enhanced visual animations and 3D effects</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Includes 3 to 6 months of free maintenance</li>
+            </ul>
+            <button data-tab-target="contact" class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-zinc-700 bg-[#111113] px-6 py-3 text-sm font-semibold text-zinc-200 transition-all duration-300 ease-out hover:border-zinc-600 hover:text-white">Get Started</button>
+          </article>
+
+          <!-- TIER 3 -->
+          <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-6 sm:p-8 transition-all duration-300 hover:border-zinc-700/80 group flex flex-col">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-xs font-mono uppercase tracking-widest text-zinc-500">Tier 3</p>
+              <span class="rounded-full bg-zinc-800/40 px-3 py-1 text-[10px] uppercase tracking-widest text-zinc-500">Premium</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-white">Custom Solutions</h3>
+            <p class="mt-2 text-sm text-zinc-400">Tailor-made software built to solve your unique business challenges.</p>
+            <div class="mt-4 flex items-baseline gap-2"><span class="text-3xl font-semibold text-white">Contact Us</span></div>
+            <ul class="mt-6 space-y-2.5 flex-1">
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Custom web application and mobile software engineering</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Deep integration with third-party APIs and legacy systems</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Specialized technical consulting and architecture design</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Scalable infrastructure</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Includes 3 to 6 months of free maintenance</li>
+            </ul>
+            <button data-tab-target="contact" class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-zinc-700 bg-[#111113] px-6 py-3 text-sm font-semibold text-zinc-200 transition-all duration-300 ease-out hover:border-zinc-600 hover:text-white">Let's Talk</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Branding Packages -->
+      <section class="space-y-8">
+        <div class="space-y-4">
+          <p class="text-xs font-mono uppercase tracking-widest text-zinc-500">[ / LOGO & BRANDING]</p>
+          <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Brand identity packages that make your business unforgettable.</h2>
+          <p class="max-w-3xl text-base leading-8 text-zinc-400">From a distinct logo mark to a complete corporate identity ecosystem — every brand starts with a strong visual foundation.</p>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-3">
+          <!-- Logo Design -->
+          <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-6 sm:p-8 transition-all duration-300 hover:border-zinc-700/80 group flex flex-col">
+            <div class="flex items-center justify-between mb-1"><p class="text-xs font-mono uppercase tracking-widest text-zinc-500">Tier 1</p><span class="rounded-full bg-zinc-800/40 px-3 py-1 text-[10px] uppercase tracking-widest text-zinc-500">Essential</span></div>
+            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-white">Logo Design</h3>
+            <p class="mt-2 text-sm text-zinc-400">Establish a distinct, professional visual mark for your business.</p>
+            <div class="mt-4 flex items-baseline gap-2"><span class="text-3xl font-semibold text-white">15,000 ETB</span></div>
+            <p class="text-xs text-zinc-500 mt-1">Timeline: 3 to 5 Days</p>
+            <ul class="mt-6 space-y-2.5 flex-1">
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Custom, premium logo design</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Essential file formats for digital and print use</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Includes free consultation and discovery chat to review your idea</li>
+            </ul>
+            <button data-tab-target="contact" class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-zinc-700 bg-[#111113] px-6 py-3 text-sm font-semibold text-zinc-200 transition-all duration-300 ease-out hover:border-zinc-600 hover:text-white">Get Started</button>
+          </article>
+          <!-- Semi-Branding -->
+          <article class="rounded-2xl bg-[#141417] border border-accent/40 p-6 sm:p-8 shadow-[0_0_60px_rgba(0,179,126,0.08)] transition-all duration-300 hover:border-accent/60 group relative overflow-hidden flex flex-col">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full"></div>
+            <div class="flex items-center justify-between mb-1"><p class="text-xs font-mono uppercase tracking-widest text-accent">Tier 2</p><span class="rounded-full bg-accent/10 px-3 py-1 text-[10px] uppercase tracking-widest text-accent">Most requested</span></div>
+            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-white">Semi-Branding</h3>
+            <p class="mt-2 text-sm text-zinc-400">Expand your visual footprint with core business and marketing assets.</p>
+            <div class="mt-4 flex items-baseline gap-2"><span class="text-3xl font-semibold text-white">20,000 ETB</span></div>
+            <p class="text-xs text-zinc-500 mt-1">Timeline: 5 to 7 Days</p>
+            <ul class="mt-6 space-y-2.5 flex-1">
+              <li class="flex items-start gap-3 text-sm text-zinc-400"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500"></span>Everything included in the Logo Design package, plus:</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Professional business card design</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Flyer design</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Official company stamp design</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Professional letterhead template</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Custom brand patterns</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Includes free consultation and discovery chat to review your idea</li>
+            </ul>
+            <button data-tab-target="contact" class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-zinc-700 bg-[#111113] px-6 py-3 text-sm font-semibold text-zinc-200 transition-all duration-300 ease-out hover:border-zinc-600 hover:text-white">Get Started</button>
+          </article>
+          <!-- Full Branding -->
+          <article class="rounded-2xl bg-[#141417] border border-zinc-800/60 p-6 sm:p-8 transition-all duration-300 hover:border-zinc-700/80 group flex flex-col">
+            <div class="flex items-center justify-between mb-1"><p class="text-xs font-mono uppercase tracking-widest text-zinc-500">Tier 3</p><span class="rounded-full bg-zinc-800/40 px-3 py-1 text-[10px] uppercase tracking-widest text-zinc-500">Premium</span></div>
+            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-white">Full Branding</h3>
+            <p class="mt-2 text-sm text-zinc-400">A comprehensive, premium corporate identity ecosystem built to scale.</p>
+            <div class="mt-4 flex items-baseline gap-2"><span class="text-3xl font-semibold text-white">30,000 ETB</span></div>
+            <p class="text-xs text-zinc-500 mt-1">Timeline: 7 to 10 Days</p>
+            <ul class="mt-6 space-y-2.5 flex-1">
+              <li class="flex items-start gap-3 text-sm text-zinc-400"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500"></span>Everything included in the Semi-Branding package, plus:</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Complete logo variations (primary, secondary, sub-marks)</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Dynamic logo animation / intro</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Corporate brochure design</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Product packaging design</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Complete Company Profile document layout</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Corporate ID card design</li>
+              <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>Includes free consultation and discovery chat to review your idea</li>
+            </ul>
+            <button data-tab-target="contact" class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-zinc-700 bg-[#111113] px-6 py-3 text-sm font-semibold text-zinc-200 transition-all duration-300 ease-out hover:border-zinc-600 hover:text-white">Let's Talk</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Shared Terms & Policies -->
+      <section id="terms-section">
+        <div class="max-w-4xl mx-auto rounded-2xl bg-[#141417] border border-zinc-800/60 p-6 sm:p-8 shadow-soft">
+          <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Project Terms & Policies</p>
+          <div class="grid gap-5 sm:gap-6 sm:grid-cols-3">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-accent/10 text-xs text-accent term-icon">✧</span><h3 class="text-sm font-semibold text-white">Free Consultation</h3></div>
+              <p class="text-sm text-zinc-400 leading-relaxed">We offer free reviews and exploratory chats upfront to see what your idea is before we design.</p>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-accent/10 text-xs text-accent term-icon">⟐</span><h3 class="text-sm font-semibold text-white">Payment Milestones</h3></div>
+              <p class="text-sm text-zinc-400 leading-relaxed">A 50% advance payment is required to initiate the project. The remaining 50% balance will be held and paid after the final project is handed over.</p>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-accent/10 text-xs text-accent term-icon">✦</span><h3 class="text-sm font-semibold text-white">Post-Launch Support</h3></div>
+              <p class="text-sm text-zinc-400 leading-relaxed">Every package comes with 3 to 6 months of free maintenance. After that, any additional features or updates will be subject to additional fees.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- TAB: CONTACT -->
+    <div id="panel-contact" class="tab-panel pb-12 hidden is-active">
+      <section>
+        <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div class="space-y-4">
+            <p class="text-xs font-mono uppercase tracking-widest text-zinc-500">[ / START A PROJECT]</p>
+            <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Ready to build something extraordinary together?</h2>
+            <p class="max-w-3xl text-base leading-8 text-zinc-400">Tell us about your project, your goals, and your timeline. We will respond within 48 hours with a custom proposal and next steps.</p>
+            <div class="mt-6 space-y-4 rounded-2xl border border-zinc-800/60 bg-[#141417] p-6">
+              <div class="flex items-center gap-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10"><span class="text-accent text-lg">✉</span></div>
+                <div><p class="text-sm font-semibold text-white">Email us</p><p class="text-sm text-zinc-400">hello@polarisdigital.com</p></div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10"><span class="text-accent text-lg">⚡</span></div>
+                <div><p class="text-sm font-semibold text-white">Typical response time</p><p class="text-sm text-zinc-400">Within 48 hours</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-[2rem] border border-zinc-800/60 bg-[#141417] p-8 shadow-soft">
+            <form class="grid gap-6" action="https://formsubmit.co/girumgebrusj@gmail.com" method="POST">
+              <label class="block text-sm font-semibold tracking-tight text-zinc-100">Name<input type="text" name="name" required class="mt-3 w-full rounded-3xl border border-zinc-800/60 bg-[#0d0d11] px-5 py-4 text-sm text-zinc-100 outline-none transition-all duration-300 focus:border-accent/70 focus:ring-2 focus:ring-accent/10" /></label>
+              <label class="block text-sm font-semibold tracking-tight text-zinc-100">Business email<input type="email" name="email" required class="mt-3 w-full rounded-3xl border border-zinc-800/60 bg-[#0d0d11] px-5 py-4 text-sm text-zinc-100 outline-none transition-all duration-300 focus:border-accent/70 focus:ring-2 focus:ring-accent/10" /></label>
+              <label class="block text-sm font-semibold tracking-tight text-zinc-100">Company or project name<input type="text" name="project" required class="mt-3 w-full rounded-3xl border border-zinc-800/60 bg-[#0d0d11] px-5 py-4 text-sm text-zinc-100 outline-none transition-all duration-300 focus:border-accent/70 focus:ring-2 focus:ring-accent/10" /></label>
+              <label class="block text-sm font-semibold tracking-tight text-zinc-100">Tell us about your project<textarea name="brief" rows="5" required placeholder="What are you looking to build? What are your goals and timeline?" class="mt-3 w-full rounded-3xl border border-zinc-800/60 bg-[#0d0d11] px-5 py-4 text-sm text-zinc-100 outline-none transition-all duration-300 focus:border-accent/70 focus:ring-2 focus:ring-accent/10"></textarea></label>
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block text-sm font-semibold tracking-tight text-zinc-100">Select package<select name="package" class="mt-3 w-full rounded-3xl border border-zinc-800/60 bg-[#0d0d11] pl-5 pr-11 py-4 text-sm text-zinc-100 outline-none transition-all duration-300 focus:border-accent/70 focus:ring-2 focus:ring-accent/10 appearance-none cursor-pointer" style="background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23a1a1aa'%3e%3cpath d='M4 6l4 4 4-4' stroke='%23a1a1aa' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e\"); background-repeat: no-repeat; background-position: right 1.25rem center; background-size: 1rem;">
+                  <option value="">Choose a package...</option>
+                  <option value="simple-website">Simple Website — 20,000 ETB</option>
+                  <option value="business-website">Business Website — 30,000 ETB</option>
+                  <option value="custom-solutions">Custom Solutions — Contact Us</option>
+                  <option value="logo-design">Logo Design — 15,000 ETB</option>
+                  <option value="semi-branding">Semi-Branding — 20,000 ETB</option>
+                  <option value="full-branding">Full Branding — 30,000 ETB</option>
+                </select></label>
+                <label class="block text-sm font-semibold tracking-tight text-zinc-100">Preferred contact method<select name="contact-method" class="mt-3 w-full rounded-3xl border border-zinc-800/60 bg-[#0d0d11] pl-5 pr-11 py-4 text-sm text-zinc-100 outline-none transition-all duration-300 focus:border-accent/70 focus:ring-2 focus:ring-accent/10 appearance-none cursor-pointer" style="background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23a1a1aa'%3e%3cpath d='M4 6l4 4 4-4' stroke='%23a1a1aa' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e\"); background-repeat: no-repeat; background-position: right 1.25rem center; background-size: 1rem;">
+                  <option value="email">Email</option>
+                  <option value="phone">Phone</option>
+                  <option value="telegram">Telegram</option>
+                </select></label>
+              </div>
+              <style>
+                select option { background: #141417; color: #e4e4e7; }
+                html.light select option { background: #ffffff; color: #0f172a; }
+                select option:first-of-type { color: #71717a; }
+                html.light select option:first-of-type { color: #94a3b8; }
+              </style>
+              <button type="submit" class="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-4 text-base font-semibold text-black transition-all duration-300 ease-out hover:shadow-[0_0_40px_rgba(0,179,126,0.2)]">Send Project Brief</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</Layout>
+
+  <script>
+    (function() {
+      // Theme-aware styles injected for light mode
+      const style = document.createElement('style');
+      style.textContent = `
+        html.light a.transition-all.duration-300.ease-out.hover\\:text-white:hover {
+          color: #0f172a !important;
+        }
+        html.light .device-screen {
+          background: linear-gradient(180deg, rgba(240, 245, 250, 0.95), rgba(245, 248, 252, 0.95)) !important;
+          border-color: rgba(0, 0, 0, 0.08) !important;
+        }
+        html.light .device-screen::before {
+          background: linear-gradient(180deg, rgba(0,0,0,0.03), transparent 25%) !important;
+        }
+        html.light article.rounded-2xl.bg-\\[\\#141417\\] {
+          background: linear-gradient(145deg, rgba(209, 250, 229, 0.90), rgba(240, 253, 244, 0.82)) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+          border-color: #DCFCE7 !important;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+        }
+        html.light .rounded-2xl.bg-\\[\\#141417\\] {
+          background: linear-gradient(145deg, rgba(209, 250, 229, 0.90), rgba(240, 253, 244, 0.82)) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+          border-color: #DCFCE7 !important;
+        }
+        html.light .rounded-2xl.bg-\\[\\#0f0f12\\],
+        html.light .rounded-3xl.bg-\\[\\#0f0f12\\] {
+          background: rgba(5, 150, 105, 0.10) !important;
+          border-color: rgba(5, 150, 105, 0.20) !important;
+        }
+        html.light .max-w-xl.rounded-\\[2rem\\].bg-\\[\\#141417\\] {
+          background: linear-gradient(145deg, rgba(209, 250, 229, 0.90), rgba(240, 253, 244, 0.82)) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+          border-color: #DCFCE7 !important;
+        }
+        html.light .rounded-\\[2rem\\].bg-\\[\\#141417\\] {
+          background: linear-gradient(145deg, rgba(209, 250, 229, 0.90), rgba(240, 253, 244, 0.82)) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+          border-color: #DCFCE7 !important;
+        }
+        html.light .border-accent\\/40.bg-\\[\\#141417\\] {
+          background: linear-gradient(145deg, rgba(209, 250, 229, 0.90), rgba(240, 253, 244, 0.82)) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+          border-color: rgba(5, 150, 105, 0.5) !important;
+        }
+        html.light .rounded-2xl.bg-gradient-to-br.from-\\[\\#141417\\] {
+          background: linear-gradient(145deg, rgba(209, 250, 229, 0.90), rgba(240, 253, 244, 0.82)) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+          border-color: #DCFCE7 !important;
+        }
+        html.light .font-mono.text-zinc-500 { color: #059669 !important; }
+        html.light .rounded-full.border.border-zinc-700\\/60.bg-zinc-800\\/20 {
+          background-color: #f1f5f9 !important;
+          border-color: #e2e8f0 !important;
+        }
+        html.light a.rounded-full.border.border-zinc-700.bg-\\[\\#111113\\],
+        html.light button.rounded-full.border.border-zinc-700.bg-\\[\\#111113\\] {
+          background-color: rgba(5, 150, 105, 0.10) !important;
+          border-color: rgba(5, 150, 105, 0.20) !important;
+          color: #059669 !important;
+        }
+        html.light .max-w-4xl.rounded-2xl.border.border-zinc-800\\/60 {
+          background: linear-gradient(145deg, rgba(209, 250, 229, 0.90), rgba(240, 253, 244, 0.82)) !important;
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+          border-color: #DCFCE7 !important;
+        }
+      `;
+      document.head.appendChild(style);
+    })();
+
+    // Tab switching system
+    (function() {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const panels = {
+        studio: document.getElementById('panel-studio'),
+        work: document.getElementById('panel-work'),
+        services: document.getElementById('panel-services'),
+        contact: document.getElementById('panel-contact')
+      };
+
+      const switchTab = (tabId) => {
+        // Update button states
+        tabs.forEach(btn => {
+          const isActive = btn.dataset.tab === tabId;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('data-active', isActive ? 'true' : 'false');
+        });
+
+        // Show/hide panels and trigger animations
+        Object.entries(panels).forEach(([id, panel]) => {
+          if (id === tabId) {
+            panel.classList.remove('hidden');
+            panel.classList.add('active');
+            panel.classList.remove('is-active');
+            // Trigger reflow to restart animation
+            void panel.offsetHeight;
+            panel.classList.add('is-active');
+            // Scroll panel into view smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Trigger scroll-based reveals for this panel
+            const reveals = panel.querySelectorAll('.reveal, .reveal-fade, .reveal-stagger');
+            reveals.forEach(el => { el.classList.remove('is-visible'); });
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                reveals.forEach(el => el.classList.add('is-visible'));
+              });
+            });
+          } else {
+            panel.classList.add('hidden');
+            panel.classList.remove('active');
+            panel.classList.remove('is-active');
+          }
+        });
+      };
+
+      tabs.forEach(btn => {
+        btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+      });
+
+      // Cross-tab navigation buttons (data-tab-target)
+      document.querySelectorAll('[data-tab-target]').forEach(btn => {
+        btn.addEventListener('click', () => switchTab(btn.dataset.tabTarget));
+      });
+
+      // Work sub-tab switching
+      const subTabs = document.querySelectorAll('.work-subtab-btn');
+      const workSubs = {
+        websites: document.getElementById('work-websites'),
+        branding: document.getElementById('work-branding'),
+        apps: document.getElementById('work-apps')
+      };
+
+      subTabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const sub = btn.dataset.subtab;
+          subTabs.forEach(b => {
+            const isActive = b.dataset.subtab === sub;
+            b.classList.toggle('active', isActive);
+            b.setAttribute('data-active', isActive ? 'true' : 'false');
+          });
+          Object.entries(workSubs).forEach(([id, panel]) => {
+            panel.classList.toggle('hidden', id !== sub);
+            panel.classList.toggle('active', id === sub);
+          });
+        });
+      });
+
+      // Hero device toggle (phone / laptop)
+      const heroToggle = document.getElementById('hero-device-toggle');
+      if (heroToggle) {
+        const heroScenes = heroToggle.parentElement?.querySelectorAll('.hero-device-scene');
+        heroToggle.querySelectorAll('button').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const device = btn.dataset.device;
+            heroToggle.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            heroScenes?.forEach(scene => {
+              const isTarget = scene.dataset.deviceScene === device;
+              scene.style.display = isTarget ? '' : 'none';
+              if (isTarget) {
+                // Trigger resize for the newly visible scene
+                const canvas = scene.querySelector('canvas');
+                if (canvas) {
+                  canvas.style.opacity = '1';
+                  scene.dispatchEvent(new Event('resize'));
+                }
+              }
+            });
+          });
+        });
+      }
+    })();
+
+    import * as THREE from 'three';
+    import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
+    import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+  const sceneRoots = document.querySelectorAll<HTMLElement>('[data-iphone-scene]');
+
+  sceneRoots.forEach((root) => {
+    const canvas = root.querySelector('canvas');
+    const modelSrc = root.dataset.modelSrc;
+
+    if (!canvas || !modelSrc) {
+      return;
+    }
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
+    const renderer = new THREE.WebGLRenderer({
+      canvas,
+      alpha: true,
+      antialias: true,
+      powerPreference: 'high-performance'
+    });
+
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.08;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2.5));
+
+    const makeScreenTexture = (source: HTMLImageElement) => {
+      const safeTop = Math.round(source.height * 0.04);
+      const screenScale = 1.08;
+      const canvasTexture = document.createElement('canvas');
+      canvasTexture.width = source.width;
+      canvasTexture.height = source.height;
+      const context = canvasTexture.getContext('2d');
+      if (context) {
+        const scaledWidth = source.width * screenScale;
+        const scaledHeight = source.height * screenScale;
+        const offsetX = (source.width - scaledWidth) / 2;
+        context.fillStyle = '#031719';
+        context.fillRect(0, 0, canvasTexture.width, canvasTexture.height);
+        context.drawImage(source, offsetX, safeTop, scaledWidth, scaledHeight);
+      }
+      const texture = new THREE.CanvasTexture(canvasTexture);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.flipY = false;
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.generateMipmaps = false;
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.center.set(0.5, 0.5);
+      texture.rotation = Math.PI;
+      texture.repeat.x = -1;
+      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      return texture;
+    };
+
+    const screenImage = new Image();
+    screenImage.src = '/assets/pictures/novaflow-screen.png';
+    const screenVideo = document.createElement('video');
+    screenVideo.src = '/assets/videos/novaflow-scroll.webm';
+    screenVideo.muted = true;
+    screenVideo.loop = true;
+    screenVideo.playsInline = true;
+    screenVideo.preload = 'auto';
+    const screenMaterial = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      side: THREE.DoubleSide,
+      toneMapped: false
+    });
+    const bodyMaterial = new THREE.MeshStandardMaterial({
+      color: 0x191d20,
+      metalness: 0.92,
+      roughness: 0.24,
+      envMapIntensity: 0.9
+    });
+    const backMaterial = new THREE.MeshStandardMaterial({
+      color: 0x101316,
+      metalness: 0.72,
+      roughness: 0.34,
+      envMapIntensity: 0.72
+    });
+    const blackGlassMaterial = new THREE.MeshBasicMaterial({
+      color: 0x020305,
+      side: THREE.DoubleSide,
+      toneMapped: false
+    });
+
+    let videoTexture: THREE.VideoTexture | null = null;
+
+    screenImage.addEventListener('load', () => {
+      if (videoTexture) { return; }
+      const fallbackTexture = makeScreenTexture(screenImage);
+      screenMaterial.map?.dispose();
+      screenMaterial.map = fallbackTexture;
+      screenMaterial.needsUpdate = true;
+    });
+
+    const applyVideoTexture = () => {
+      videoTexture = new THREE.VideoTexture(screenVideo);
+      videoTexture.colorSpace = THREE.SRGBColorSpace;
+      videoTexture.flipY = false;
+      videoTexture.minFilter = THREE.LinearFilter;
+      videoTexture.magFilter = THREE.LinearFilter;
+      videoTexture.generateMipmaps = false;
+      videoTexture.wrapS = THREE.RepeatWrapping;
+      videoTexture.center.set(0.5, 0.5);
+      videoTexture.rotation = Math.PI;
+      videoTexture.repeat.x = -1;
+      videoTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      screenMaterial.map?.dispose();
+      screenMaterial.map = videoTexture;
+      screenMaterial.needsUpdate = true;
+    };
+
+    const keyLight = new THREE.DirectionalLight(0xffffff, 4.4);
+    keyLight.position.set(4.5, 5.5, 6);
+    keyLight.castShadow = true;
+    keyLight.shadow.mapSize.set(1024, 1024);
+    keyLight.shadow.camera.near = 0.5;
+    keyLight.shadow.camera.far = 18;
+    keyLight.shadow.camera.left = -5;
+    keyLight.shadow.camera.right = 5;
+    keyLight.shadow.camera.top = 5;
+    keyLight.shadow.camera.bottom = -5;
+    scene.add(keyLight);
+    scene.add(new THREE.HemisphereLight(0xb9fff1, 0x05070d, 1.35));
+
+    const fillLight = new THREE.PointLight(0x00b37e, 10, 12);
+    fillLight.position.set(-3.2, 1.2, 3.4);
+    scene.add(fillLight);
+
+    const rimLight = new THREE.PointLight(0x9af7ff, 32, 9);
+    rimLight.position.set(-3.8, 2.7, -2.5);
+    scene.add(rimLight);
+
+    const edgeLight = new THREE.DirectionalLight(0xdff7ff, 1.45);
+    edgeLight.position.set(-2, 3, 3.5);
+    scene.add(edgeLight);
+
+    const shadowPlane = new THREE.Mesh(
+      new THREE.CircleGeometry(2.25, 48),
+      new THREE.ShadowMaterial({ color: 0x000000, opacity: 0.24 })
+    );
+    shadowPlane.position.set(0, -1.68, -0.55);
+    shadowPlane.scale.set(1.25, 0.22, 1);
+    shadowPlane.receiveShadow = true;
+    scene.add(shadowPlane);
+
+    const phoneGroup = new THREE.Group();
+    phoneGroup.rotation.set(-0.08, -0.35, 0.03);
+    scene.add(phoneGroup);
+
+    const loader = new GLTFLoader();
+    let model: THREE.Object3D | null = null;
+    let animationFrame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+    let isAnimating = false;
+    let isSceneVisible = true;
+    let isPageVisible = !document.hidden;
+
+    const shouldAnimate = () => isSceneVisible && isPageVisible;
+
+    const syncVideoPlayback = () => {
+      if (!videoTexture) { return; }
+      if (shouldAnimate()) { void screenVideo.play().catch(() => undefined); }
+      else { screenVideo.pause(); }
+    };
+
+    const stopFrame = () => {
+      if (!isAnimating) { return; }
+      window.cancelAnimationFrame(animationFrame);
+      isAnimating = false;
+    };
+
+    const resize = () => {
+      const { width, height } = root.getBoundingClientRect();
+      renderer.setSize(width, height, false);
+      camera.aspect = width / Math.max(height, 1);
+      camera.position.set(0, 0.05, width < 560 ? 7 : 6.25);
+      camera.updateProjectionMatrix();
+    };
+
+    const frame = () => {
+      if (!shouldAnimate()) { isAnimating = false; return; }
+      animationFrame = window.requestAnimationFrame(frame);
+      const time = performance.now() * 0.001;
+      phoneGroup.rotation.y += ((-0.35 + pointerX * 0.22) - phoneGroup.rotation.y) * 0.05;
+      phoneGroup.rotation.x += ((-0.08 + pointerY * 0.12) - phoneGroup.rotation.x) * 0.05;
+      phoneGroup.position.y = 0.28 + Math.sin(time * 1.35) * 0.06;
+      renderer.render(scene, camera);
+    };
+
+    const startFrame = () => {
+      if (isAnimating || !shouldAnimate()) { return; }
+      isAnimating = true;
+      animationFrame = window.requestAnimationFrame(frame);
+    };
+
+    screenVideo.addEventListener('loadeddata', () => {
+      applyVideoTexture();
+      syncVideoPlayback();
+    }, { once: true });
+    screenVideo.load();
+
+    root.addEventListener('pointermove', (event) => {
+      const rect = root.getBoundingClientRect();
+      pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      pointerY = -(((event.clientY - rect.top) / rect.height - 0.5) * 2);
+    });
+    root.addEventListener('pointerleave', () => { pointerX = 0; pointerY = 0; });
+
+    loader.load(modelSrc, (gltf) => {
+      model = gltf.scene;
+      model.traverse((object) => {
+        if (object.name.toLowerCase() === 'floor') { object.visible = false; }
+        const meshCandidate = object as THREE.Object3D & { isMesh?: boolean; material?: THREE.Material | THREE.Material[] };
+        const meshName = object.name.toLowerCase();
+        const parentName = object.parent?.name.toLowerCase() ?? '';
+        const normalizedName = meshName.replace(/[\s-]+/g, '_');
+        const normalizedParentName = parentName.replace(/[\s-]+/g, '_');
+        if (meshCandidate.isMesh && meshName === 'screen') {
+          meshCandidate.castShadow = false; meshCandidate.receiveShadow = false; meshCandidate.material = screenMaterial; return;
+        }
+        if (meshCandidate.isMesh && (normalizedName === 'screen_border' || normalizedParentName.includes('dynamic_island') || normalizedParentName.includes('camera') || normalizedParentName.includes('cam') || normalizedName.includes('cam'))) {
+          meshCandidate.castShadow = true; meshCandidate.receiveShadow = true; meshCandidate.material = blackGlassMaterial; return;
+        }
+        if (meshCandidate.isMesh && normalizedName === 'back_side') {
+          meshCandidate.castShadow = true; meshCandidate.receiveShadow = true; meshCandidate.material = backMaterial; return;
+        }
+        if (meshCandidate.isMesh) {
+          meshCandidate.castShadow = true; meshCandidate.receiveShadow = true; meshCandidate.material = bodyMaterial;
+        }
+      });
+      const box = new THREE.Box3();
+      model.traverse((object) => {
+        const meshCandidate = object as THREE.Object3D & { isMesh?: boolean };
+        if (meshCandidate.isMesh && object.visible) { box.expandByObject(object); }
+      });
+      if (box.isEmpty()) { box.setFromObject(model); }
+      const size = box.getSize(new THREE.Vector3());
+      const center = box.getCenter(new THREE.Vector3());
+      const maxAxis = Math.max(size.x, size.y, size.z);
+      const scale = 3.05 / Math.max(maxAxis, 1);
+      model.scale.setScalar(scale);
+      model.position.set(-center.x * scale, -center.y * scale, -center.z * scale);
+      phoneGroup.add(model);
+      root.classList.add('is-loaded');
+    }, undefined, () => { root.classList.add('has-failed'); });
+
+    resize();
+    startFrame();
+
+    const observer = new ResizeObserver(resize);
+    observer.observe(root);
+
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      isSceneVisible = entry.isIntersecting;
+      if (shouldAnimate()) { startFrame(); } else { stopFrame(); }
+      syncVideoPlayback();
+    }, { threshold: 0.05 });
+    visibilityObserver.observe(root);
+
+    const handleVisibilityChange = () => {
+      isPageVisible = !document.hidden;
+      if (shouldAnimate()) { startFrame(); } else { stopFrame(); }
+      syncVideoPlayback();
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    document.addEventListener('astro:before-swap', () => {
+      stopFrame();
+      observer.disconnect();
+      visibilityObserver.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      screenVideo.pause();
+      screenMaterial.map?.dispose();
+      videoTexture?.dispose();
+      renderer.dispose();
+    }, { once: true });
+  });
+
+  // Laptop scene for AETHER case study
+  const laptopScenes = document.querySelectorAll<HTMLElement>('[data-laptop-scene]');
+  laptopScenes.forEach((root) => {
+    const canvas = root.querySelector('canvas');
+    const modelSrc = root.dataset.modelSrc;
+    if (!canvas || !modelSrc) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.12;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+    const environmentMap = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
+    scene.environment = environmentMap;
+    pmremGenerator.dispose();
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x404040, 1.2));
+    const keyLight = new THREE.DirectionalLight(0xfff2dd, 1.8);
+    keyLight.position.set(2, 3, 2);
+    keyLight.castShadow = true;
+    scene.add(keyLight);
+    const laptopGroup = new THREE.Group();
+    scene.add(laptopGroup);
+
+    const screenMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide, toneMapped: false });
+
+    let animationFrame = 0;
+    let isAnimating = false;
+    let isSceneVisible = true;
+    let isPageVisible = !document.hidden;
+    let videoTexture: THREE.VideoTexture | null = null;
+    let videoElement: HTMLVideoElement | null = null;
+    let pointerX = 0;
+    let pointerY = 0;
+    const shouldAnimate = () => isSceneVisible && isPageVisible;
+
+    const resize = () => {
+      const { width, height } = root.getBoundingClientRect();
+      renderer.setSize(width, height, false);
+      camera.aspect = width / Math.max(height, 1);
+      camera.position.set(-0.8, 0.6, 2.8);
+      camera.lookAt(0, 0.2, 0);
+      camera.updateProjectionMatrix();
+    };
+
+    const frame = () => {
+      if (!shouldAnimate()) { isAnimating = false; return; }
+      animationFrame = window.requestAnimationFrame(frame);
+      const time = performance.now() * 0.001;
+      laptopGroup.rotation.y += (pointerX * 0.02 + Math.sin(time * 0.32) * 0.006 - laptopGroup.rotation.y) * 0.04;
+      laptopGroup.rotation.x += (pointerY * 0.015 + Math.sin(time * 0.28) * 0.004 - laptopGroup.rotation.x) * 0.04;
+      laptopGroup.position.y = Math.sin(time * 0.28) * 0.004;
+      if (videoTexture) videoTexture.needsUpdate = true;
+      renderer.render(scene, camera);
+    };
+    const startFrame = () => { if (isAnimating || !shouldAnimate()) return; isAnimating = true; animationFrame = window.requestAnimationFrame(frame); };
+    const stopFrame = () => { if (!isAnimating) return; window.cancelAnimationFrame(animationFrame); isAnimating = false; };
+
+    const loadModel = () => {
+      const loader = new GLTFLoader();
+      loader.load(modelSrc, (gltf) => {
+        const model = gltf.scene;
+        model.updateMatrixWorld(true);
+        videoElement = document.createElement('video');
+        videoElement.src = '/assets/videos/laptop-screen.mp4#t=8';
+        videoElement.muted = true;
+        videoElement.loop = true;
+        videoElement.playsInline = true;
+        videoElement.preload = 'auto';
+        videoElement.style.display = 'none';
+        videoElement.setAttribute('playsinline', '');
+        document.body.appendChild(videoElement);
+
+        const screenImageSrc = root.dataset.screenImage;
+        model.traverse((object) => {
+          const mesh = object as THREE.Object3D & { isMesh?: boolean; material?: THREE.Material | THREE.Material[] };
+          if (!mesh.isMesh) return;
+          const name = object.name.toLowerCase().replace(/[\s-]+/g, '_');
+          const match = name.match(/object_(\d+)/);
+          if (match) {
+            const num = parseInt(match[1], 10);
+            if (num === 123) {
+              mesh.material = screenMaterial;
+              mesh.castShadow = false;
+              mesh.receiveShadow = false;
+            }
+          }
+        });
+
+        const box = new THREE.Box3();
+        model.traverse((object) => {
+          const mesh = object as THREE.Object3D & { isMesh?: boolean };
+          if (mesh.isMesh && object.visible) box.expandByObject(object);
+        });
+        const size = box.getSize(new THREE.Vector3());
+        const center = box.getCenter(new THREE.Vector3());
+        const maxAxis = Math.max(size.x, size.y, size.z);
+        const modelScale = 3.35 / Math.max(maxAxis, 1);
+        model.scale.setScalar(modelScale);
+        model.position.set(-center.x * modelScale, -center.y * modelScale, -center.z * modelScale);
+        laptopGroup.add(model);
+        laptopGroup.rotation.set(-0.15, -0.4, 0);
+
+        if (screenImageSrc) {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.src = screenImageSrc;
+          img.onload = () => {
+            const imageTexture = new THREE.Texture(img);
+            imageTexture.colorSpace = THREE.SRGBColorSpace;
+            imageTexture.minFilter = THREE.LinearFilter;
+            imageTexture.magFilter = THREE.LinearFilter;
+            imageTexture.generateMipmaps = false;
+            imageTexture.needsUpdate = true;
+            screenMaterial.map?.dispose();
+            screenMaterial.map = imageTexture;
+            screenMaterial.needsUpdate = true;
+          };
+        } else {
+          videoElement = document.createElement('video');
+          videoElement.src = '/assets/videos/laptop-screen.mp4#t=8';
+          videoElement.muted = true;
+          videoElement.loop = true;
+          videoElement.playsInline = true;
+          videoElement.preload = 'auto';
+          videoElement.style.display = 'none';
+          videoElement.setAttribute('playsinline', '');
+          document.body.appendChild(videoElement);
+
+          videoElement.addEventListener('loadeddata', () => {
+            videoTexture = new THREE.VideoTexture(videoElement!);
+            videoTexture.colorSpace = THREE.SRGBColorSpace;
+            videoTexture.flipY = false;
+            videoTexture.minFilter = THREE.LinearFilter;
+            videoTexture.magFilter = THREE.LinearFilter;
+            videoTexture.generateMipmaps = false;
+            videoTexture.wrapT = THREE.RepeatWrapping;
+            videoTexture.repeat.y = -1;
+            videoTexture.offset.y = 1;
+            videoTexture.rotation = 0;
+            screenMaterial.map?.dispose();
+            screenMaterial.map = videoTexture;
+            screenMaterial.needsUpdate = true;
+            if (shouldAnimate()) void videoElement!.play().catch(() => undefined);
+          }, { once: true });
+          videoElement.load();
+        }
+        root.classList.add('is-loaded');
+        resize();
+        startFrame();
+      }, undefined, () => { root.classList.add('has-failed'); });
+    };
+
+    const loadObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { loadModel(); loadObserver.disconnect(); }
+    }, { rootMargin: '50px' });
+    loadObserver.observe(root);
+
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(root);
+
+    root.addEventListener('pointermove', (event) => {
+      const rect = root.getBoundingClientRect();
+      pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      pointerY = -(((event.clientY - rect.top) / rect.height - 0.5) * 2);
+    });
+    root.addEventListener('pointerleave', () => { pointerX = 0; pointerY = 0; });
+
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      isSceneVisible = entry.isIntersecting;
+      if (shouldAnimate()) { startFrame(); if (videoTexture && videoElement) void videoElement.play().catch(() => undefined); }
+      else { stopFrame(); videoElement?.pause(); }
+    }, { threshold: 0.05 });
+    visibilityObserver.observe(root);
+
+    document.addEventListener('visibilitychange', () => {
+      isPageVisible = !document.hidden;
+      if (shouldAnimate()) { startFrame(); if (videoTexture && videoElement) void videoElement.play().catch(() => undefined); }
+      else { stopFrame(); videoElement?.pause(); }
+    });
+
+    document.addEventListener('astro:before-swap', () => {
+      stopFrame();
+      resizeObserver.disconnect();
+      visibilityObserver.disconnect();
+      videoElement?.pause();
+      videoTexture?.dispose();
+      environmentMap.dispose();
+      renderer.dispose();
+    }, { once: true });
+  });
+
+  // Scroll-based stagger reveal
+  (function() {
+    const els = document.querySelectorAll('.reveal-stagger');
+    if (!els.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(el => observer.observe(el));
+  })();
+
+  // Term icon animation — replay on scroll
+  (function() {
+    const icons = document.querySelectorAll('.term-icon');
+    if (!icons.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('term-icon-spin');
+          void entry.target.offsetWidth;
+          entry.target.classList.add('term-icon-spin');
+        } else {
+          entry.target.classList.remove('term-icon-spin');
+        }
+      });
+    }, { threshold: 0.9, rootMargin: '0px 0px -30px 0px' });
+    icons.forEach(el => observer.observe(el));
+  })();
+
+  // Contact form validation and submission
+  (function() {
+    const form = document.querySelector('#panel-contact form');
+    if (!form) return;
+
+    const showError = (input, msg) => {
+      const existing = input.parentElement.querySelector('.field-error');
+      if (existing) existing.remove();
+      const err = document.createElement('p');
+      err.className = 'field-error text-xs text-red-400 mt-1';
+      err.textContent = msg;
+      input.parentElement.appendChild(err);
+      input.classList.add('border-red-400/60');
+    };
+
+    const clearError = (input) => {
+      const existing = input.parentElement.querySelector('.field-error');
+      if (existing) existing.remove();
+      input.classList.remove('border-red-400/60');
+    };
+
+    form.addEventListener('submit', (e) => {
+      let valid = true;
+
+      const name = form.querySelector('[name="name"]');
+      const email = form.querySelector('[name="email"]');
+      const project = form.querySelector('[name="project"]');
+      const brief = form.querySelector('[name="brief"]');
+
+      [name, email, project, brief].forEach(clearError);
+
+      if (!name.value.trim()) { showError(name, 'Name is required'); valid = false; }
+      if (!email.value.trim()) { showError(email, 'Email is required'); valid = false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { showError(email, 'Enter a valid email'); valid = false; }
+      if (!project.value.trim()) { showError(project, 'Project name is required'); valid = false; }
+      if (!brief.value.trim()) { showError(brief, 'Please tell us about your project'); valid = false; }
+
+      if (!valid) e.preventDefault();
+    });
+
+    // Clear errors on input
+    form.querySelectorAll('input, textarea, select').forEach(el => {
+      el.addEventListener('input', () => clearError(el));
+    });
+  })();
+</script>
