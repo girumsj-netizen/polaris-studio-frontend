@@ -1,17 +1,18 @@
 ---
 import '../styles/global.css';
 
+const SITE_URL = import.meta.env.PUBLIC_SITE_URL || 'https://polarisdigital.vercel.app';
 const {
   title = 'Premium Digital Studio — Websites, UI, and Brand Experiences',
-  description = 'We craft high-performance websites, complex UI interactions, and bespoke digital experiences for modern brands.',
-  canonical = 'https://yourdomain.com'
+  description = 'We craft high-performance websites, complex UI interactions, and digital experiences for modern brands.',
+  canonical = SITE_URL
 } = Astro.props;
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Polaris Digital',
   url: canonical,
-  logo: 'https://yourdomain.com/logo.svg',
+  logo: `${SITE_URL}/logo.svg`,
   sameAs: ['https://www.linkedin.com/in/yourprofile'],
   contactPoint: [{
     '@type': 'ContactPoint',
