@@ -1049,16 +1049,6 @@ const canonical = 'https://yourdomain.com';
       loader.load(modelSrc, (gltf) => {
         const model = gltf.scene;
         model.updateMatrixWorld(true);
-        videoElement = document.createElement('video');
-        videoElement.src = '/assets/videos/laptop-screen.mp4#t=8';
-        videoElement.muted = true;
-        videoElement.loop = true;
-        videoElement.playsInline = true;
-        videoElement.preload = 'auto';
-        videoElement.style.display = 'none';
-        videoElement.setAttribute('playsinline', '');
-        document.body.appendChild(videoElement);
-
         const screenImageSrc = root.dataset.screenImage;
         model.traverse((object) => {
           const mesh = object as THREE.Object3D & { isMesh?: boolean; material?: THREE.Material | THREE.Material[] };
