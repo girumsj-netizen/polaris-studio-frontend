@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 
 const SITE_URL = import.meta.env.PUBLIC_SITE_URL || 'https://polarisdigital.vercel.app';
 const {
@@ -40,6 +41,7 @@ const organizationSchema = {
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content="/og-image.svg" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <Analytics />
     <script is:inline>
       (function() {
         const theme = localStorage.getItem('theme');
