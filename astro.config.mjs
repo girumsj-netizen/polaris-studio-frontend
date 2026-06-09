@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://yourdomain.com',
+  site: 'https://polarisdigital.vercel.app',
   output: 'static'
 });
