@@ -246,6 +246,7 @@ html.light .device-screen::before {
   background:
     linear-gradient(150deg, rgba(0, 179, 126, 0.18), transparent 36%),
     radial-gradient(circle at 76% 18%, rgba(96, 165, 250, 0.2), transparent 28%),
+    radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.14), transparent 42%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 42%),
     #09131c;
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
@@ -256,6 +257,7 @@ html.light .showcase-hero .hero-visual {
   background:
     linear-gradient(150deg, rgba(5, 150, 105, 0.08), transparent 36%),
     radial-gradient(circle at 76% 18%, rgba(37, 99, 235, 0.06), transparent 28%),
+    radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.05), transparent 42%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent 42%),
     #f0f5f0;
 }
@@ -336,6 +338,7 @@ html.light div:has(> .laptop-scene).rounded-3xl {
   background:
     linear-gradient(150deg, rgba(5, 150, 105, 0.08), transparent 36%),
     radial-gradient(circle at 76% 18%, rgba(37, 99, 235, 0.06), transparent 28%),
+    radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.04), transparent 42%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent 42%),
     #f0f5f0 !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
@@ -729,8 +732,8 @@ html.light .bg-grid {
   top: 0;
   height: 1px;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 180, 0.8), transparent);
-  box-shadow: 0 0 18px rgba(0, 179, 126, 0.35);
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.6), rgba(59, 130, 246, 0.6), rgba(139, 92, 246, 0.6), transparent);
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.25);
 }
 
 .digital-footer > div {
@@ -777,13 +780,55 @@ html.light .bg-grid {
 
   .process-card,
   #panel-services article button.rounded-full {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.1s ease-out, border-color 0.1s ease-out, box-shadow 0.1s ease-out, background-color 0.1s ease-out;
+    will-change: transform;
   }
 
   .process-card:hover {
-    transform: scale(1.06);
-    border-color: rgba(0, 179, 126, 0.4) !important;
-    box-shadow: 0 12px 40px rgba(0, 179, 126, 0.15);
+    transform: scale(1.04);
+  }
+
+  .liquid-glass {
+    will-change: transform;
+  }
+
+  :root:not(.light) .liquid-glass:not(button) {
+    background: #141417 !important;
+  }
+
+  :root:not(.light) .liquid-glass:has(.gradient-text) {
+    background: rgba(20, 20, 23, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-color: rgba(255,255,255,0.08) !important;
+  }
+
+  html.light .liquid-glass {
+    backdrop-filter: saturate(180%) blur(24px);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    box-shadow:
+      0 8px 32px rgba(30, 60, 90, 0.08),
+      0 2px 8px rgba(30, 60, 90, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.90),
+      inset 0 2px 0 rgba(255, 255, 255, 0.40),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.20),
+      inset 0 -2px 4px rgba(30, 60, 90, 0.03),
+      inset 1px 0 0 rgba(255, 255, 255, 0.30),
+      inset -1px 0 0 rgba(255, 255, 255, 0.15) !important;
+  }
+
+  html.light button.liquid-glass {
+    backdrop-filter: saturate(180%) blur(24px);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    box-shadow:
+      0 8px 32px rgba(30, 60, 90, 0.08),
+      0 2px 8px rgba(30, 60, 90, 0.04) !important;
+  }
+
+  html.light .process-card.liquid-glass {
+    box-shadow:
+      0 8px 32px rgba(30, 60, 90, 0.08),
+      0 2px 8px rgba(30, 60, 90, 0.04) !important;
   }
 
   #panel-services article button.rounded-full:hover {
@@ -797,6 +842,65 @@ html.light .bg-grid {
 
   .tab-btn:hover {
     transform: scale(1.08);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #00b37e, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .btn-gradient-shine .gradient-text {
+    background: linear-gradient(90deg, #00b37e, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .liquid-glass .gradient-text {
+    background: linear-gradient(90deg, #00b37e, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .liquid-glass:has(.gradient-text) {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+  }
+
+  .liquid-glass:has(.gradient-text)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(165deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .liquid-glass:has(.gradient-text) .gradient-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .liquid-glass:has(.gradient-text):hover {
+    transform: scale(1.06);
+  }
+
+  html.light .liquid-glass:has(.gradient-text) {
+    background: rgba(255,255,255,0.55) !important;
+    border-color: rgba(255,255,255,0.65) !important;
+    box-shadow:
+      0 8px 32px rgba(30,60,90,0.08),
+      0 2px 8px rgba(30,60,90,0.04),
+      inset 0 1px 0 rgba(255,255,255,0.92),
+      inset 0 2px 0 rgba(255,255,255,0.40),
+      inset 0 -1px 0 rgba(255,255,255,0.20),
+      inset 1px 0 0 rgba(255,255,255,0.30),
+      inset -1px 0 0 rgba(255,255,255,0.15) !important;
   }
 
   header nav button.rounded-full.bg-accent {
@@ -1378,7 +1482,8 @@ html.light [class*="text-zinc-"] {
 
 html.light .text-zinc-100,
 html.light .text-zinc-200,
-html.light .text-zinc-300 {
+html.light .text-zinc-300,
+html.light .text-zinc-400 {
   color: #0f172a !important;
 }
 
@@ -1557,4 +1662,146 @@ html.light a.rounded-full.bg-accent {
     inset 0 1px 0 rgba(255, 255, 255, 0.85),
     inset 0 -1px 0 rgba(255, 255, 255, 0.15),
     0 2px 8px rgba(30, 60, 90, 0.04) !important;
+}
+
+/* ---- Tier card icons in light mode ---- */
+html.light .rounded-2xl .rounded-2xl.bg-emerald-500\/10,
+html.light .rounded-2xl .rounded-2xl.bg-blue-500\/10,
+html.light .rounded-2xl .rounded-2xl.bg-purple-500\/10 {
+  background: linear-gradient(165deg, rgba(255,255,255,0.65), rgba(255,255,255,0.35)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: saturate(180%) blur(16px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(16px) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.80),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ---- Hero buttons (studio tab) light mode overrides ---- */
+html.light button.rounded-full.bg-accent[data-tab-target="work"] {
+  color: #059669 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+html.light button.rounded-full.border-zinc-700[data-tab-target="contact"] {
+  color: #2563eb !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(37, 99, 235, 0.3) !important;
+}
+
+/* ---- Tier price section glass ---- */
+html.light .rounded-xl.bg-emerald-500\/5,
+html.light .rounded-xl.bg-blue-500\/5,
+html.light .rounded-xl.bg-purple-500\/5 {
+  background: linear-gradient(165deg, rgba(255,255,255,0.60), rgba(255,255,255,0.32)) !important;
+  backdrop-filter: saturate(180%) blur(16px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.50) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.80),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ---- Hero buttons (studio tab) - colored text in light mode, no glass ---- */
+button.rounded-full.bg-accent[data-tab-target="work"] {
+  color: #059669 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+html.dark button.rounded-full.bg-accent[data-tab-target="work"] {
+  color: #000 !important;
+  background: #00b37e !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+button.rounded-full.border-zinc-700[data-tab-target="contact"] {
+  color: #2563eb !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(37, 99, 235, 0.3) !important;
+}
+html.dark button.rounded-full.border-zinc-700[data-tab-target="contact"] {
+  color: #e4e4e7 !important;
+  background: #111113 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: 1px solid #52525b !important;
+}
+
+/* ---- Tier badge glass ---- */
+html.light .rounded-full.bg-emerald-500\/10,
+html.light .rounded-full.bg-blue-500\/10,
+html.light .rounded-full.bg-purple-500\/10 {
+  background: linear-gradient(165deg, rgba(255,255,255,0.60), rgba(255,255,255,0.35)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.50) !important;
+  backdrop-filter: saturate(160%) blur(12px) !important;
+  -webkit-backdrop-filter: saturate(160%) blur(12px) !important;
+}
+
+/* ---- Work sub-tab buttons: just colored text in light mode ---- */
+html.light .work-subtab-btn[data-active="true"] {
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+}
+html.light .work-subtab-btn[data-subtab="websites"][data-active="true"] {
+  color: #3b82f6 !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+html.light .work-subtab-btn[data-subtab="branding"][data-active="true"] {
+  color: #8b5cf6 !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+}
+html.light .work-subtab-btn[data-subtab="apps"][data-active="true"] {
+  color: #10b981 !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+/* ---- Tier button glass ---- */
+html.light button.rounded-full.border.border-emerald-500\/30,
+html.light button.rounded-full.border.border-blue-500\/30,
+html.light button.rounded-full.border.border-purple-500\/30 {
+  background: linear-gradient(165deg, rgba(255,255,255,0.62), rgba(255,255,255,0.38)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: saturate(160%) blur(14px) !important;
+  -webkit-backdrop-filter: saturate(160%) blur(14px) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.80),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ---- CertPlatform logo text adaptive ---- */
+.cert-logo-text {
+  fill: #ffffff;
+}
+
+html.light .cert-logo-text {
+  fill: #0f172a;
+}
+
+/* ---- Info box icon glass ---- */
+html.light .w-10.h-10.rounded-full.bg-emerald-500\/10,
+html.light .w-10.h-10.rounded-full.bg-blue-500\/10,
+html.light .w-10.h-10.rounded-full.bg-purple-500\/10 {
+  background: linear-gradient(165deg, rgba(255,255,255,0.65), rgba(255,255,255,0.35)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.50) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.80),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12) !important;
 }

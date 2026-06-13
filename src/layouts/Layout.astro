@@ -86,10 +86,10 @@ const organizationSchema = {
 
             <!-- Tab navigation — merged into navbar -->
             <div class="hidden sm:flex items-center gap-1" style="color: var(--text-muted);">
-              <button data-tab="studio" class="tab-btn active px-3 lg:px-4 py-1.5 rounded-xl text-xs font-medium transition-all duration-300 text-zinc-400 hover:text-white data-[active=true]:bg-accent/10 data-[active=true]:text-accent">Studio</button>
-              <button data-tab="work" class="tab-btn px-3 lg:px-4 py-1.5 rounded-xl text-xs font-medium transition-all duration-300 text-zinc-400 hover:text-white data-[active=true]:bg-accent/10 data-[active=true]:text-accent">Work</button>
-              <button data-tab="services" class="tab-btn px-3 lg:px-4 py-1.5 rounded-xl text-xs font-medium transition-all duration-300 text-zinc-400 hover:text-white data-[active=true]:bg-accent/10 data-[active=true]:text-accent">Services</button>
-              <button data-tab="contact" class="tab-btn px-3 lg:px-4 py-1.5 rounded-xl text-xs font-medium transition-all duration-300 text-zinc-400 hover:text-white data-[active=true]:bg-accent/10 data-[active=true]:text-accent">Contact</button>
+              <button data-tab="studio" class="tab-btn active px-3 lg:px-4 py-1.5 rounded-xl text-xs font-medium transition-all duration-300 text-accent hover:text-accent data-[active=true]:bg-accent/10 data-[active=true]:text-accent">Studio</button>
+              <button data-tab="work" class="tab-btn px-3 lg:px-4 py-1.5 rounded-xl text-xs font-medium transition-all duration-300 text-blue-500 hover:text-blue-400 data-[active=true]:bg-blue-500/10 data-[active=true]:text-blue-500">Work</button>
+              <button data-tab="services" class="tab-btn px-3 lg:px-4 py-1.5 rounded-xl text-xs font-medium transition-all duration-300 text-purple-500 hover:text-purple-400 data-[active=true]:bg-purple-500/10 data-[active=true]:text-purple-500">Services</button>
+              <button data-tab="contact" class="tab-btn px-3 lg:px-4 py-1.5 rounded-xl text-xs font-medium transition-all duration-300 text-accent hover:text-accent data-[active=true]:bg-accent/10 data-[active=true]:text-accent">Contact</button>
             </div>
 
             <div class="flex items-center gap-2 sm:gap-3">
@@ -117,7 +117,7 @@ const organizationSchema = {
               </button>
 
               <!-- Desktop CTA -->
-              <button data-tab-target="contact" class="hidden sm:inline-flex items-center justify-center rounded-full bg-accent px-5 py-2 text-xs uppercase tracking-[0.32em] font-semibold text-black transition-all duration-300 ease-out hover:shadow-[0_0_40px_rgba(0,179,126,0.28)]">Start a Project</button>
+              <button data-tab-target="contact" class="hidden sm:inline-flex items-center justify-center rounded-full border border-accent/40 px-5 py-2 text-xs uppercase tracking-[0.32em] font-semibold liquid-glass"><span class="gradient-text">Start a Project</span></button>
 
               <!-- Hamburger button (mobile only) -->
               <button id="mobile-menu-btn" class="sm:hidden relative z-50 flex h-9 w-9 items-center justify-center rounded-full border border-zinc-700/60 bg-zinc-800/20 transition-all duration-300" aria-label="Toggle menu">
@@ -141,7 +141,7 @@ const organizationSchema = {
           <a class="mobile-nav-link text-lg font-medium text-zinc-300 transition-all duration-300 hover:text-white cursor-pointer" data-tab-target="services" style="color: var(--text-muted);">Services</a>
           <a class="mobile-nav-link text-lg font-medium text-zinc-300 transition-all duration-300 hover:text-white cursor-pointer" data-tab-target="contact" style="color: var(--text-muted);">Contact</a>
           <div class="mt-4 pt-6 border-t border-zinc-800/40">
-            <a class="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-black transition-all duration-300 ease-out hover:shadow-[0_0_40px_rgba(0,179,126,0.2)] cursor-pointer" data-tab-target="contact">Start a Project</a>
+            <a class="inline-flex w-full items-center justify-center rounded-full border border-accent/40 px-6 py-3 text-sm font-semibold liquid-glass cursor-pointer" data-tab-target="contact"><span class="gradient-text">Start a Project</span></a>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@ const organizationSchema = {
         <div class="pointer-events-none absolute inset-x-0 top-0 h-20 sm:h-32 z-20" aria-hidden="true" style="background: linear-gradient(to bottom, var(--footer-bg) 0%, transparent 100%);"></div>
         <!-- Huge watermark text — edge-to-edge, positioned low -->
         <div class="footer-watermark pointer-events-none select-none relative z-10 flex items-end" aria-hidden="true">
-<p class="font-bold leading-none tracking-tighter whitespace-nowrap" style="font-size: clamp(4rem, 13vw, 11rem); line-height: 0.85; background: linear-gradient(180deg, rgba(0, 179, 126, 0.30), rgba(0, 179, 126, 0.10)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: Inter, ui-sans-serif, system-ui, sans-serif; margin: 0; padding: 0; width: 100%; text-align: center; letter-spacing: -0.04em; transform: translateY(60px); transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease; opacity: 0;">Polaris Digital</p>
+<p class="font-bold leading-none tracking-tighter whitespace-nowrap" style="font-size: clamp(4rem, 13vw, 11rem); line-height: 0.85; background: linear-gradient(90deg, rgba(16,185,129,0.35), rgba(59,130,246,0.35), rgba(139,92,246,0.35)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: Inter, ui-sans-serif, system-ui, sans-serif; margin: 0; padding: 0; width: 100%; text-align: center; letter-spacing: -0.04em; transform: translateY(60px); transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease; opacity: 0;">Polaris Digital</p>
         </div>
         <!-- Footer info row -->
         <div class="relative z-20 mx-auto max-w-7xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-4 sm:px-8 pt-4 pb-5">
