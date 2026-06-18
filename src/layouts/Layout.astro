@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 const SITE_URL = import.meta.env.PUBLIC_SITE_URL || 'https://polarisdigital.vercel.app';
 const {
@@ -53,6 +54,7 @@ const organizationSchema = {
         }
       })();
     </script>
+    <SpeedInsights />
   </head>
   <body class="min-h-screen bg-[#09090b] text-zinc-100 selection:bg-accent/30 antialiased">
     <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(0,179,126,0.10),_transparent_28%)] bg-grid">
